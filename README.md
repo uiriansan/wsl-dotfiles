@@ -13,3 +13,7 @@
 -----
 
 <img src="./preview.png" width="100%" />
+
+
+- In order to keep `pkglist.txt` up to date, copy `savepkgs.hook` to `/usr/share/libalpm/hooks/`\
+- To install the packages listed in `pkglist.txt`, run `pacman -S --needed $(comm -12 <(pacman -Slq | sort) <(sort pkglist.txt))`

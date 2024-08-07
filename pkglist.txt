@@ -10,6 +10,7 @@ fish
 gimp
 git
 helix
+kitty
 libsixel
 man-db
 nano

@@ -146,8 +146,10 @@
             "keyColor": "yellow",
         },
         {
-            "type": "custom",
-            "format": "SSD Corsair MP600 PRO - 1 TB",
+            "type": "command",
+            "text": "df --output=pcent /mnt/c | tr -dc '0-9'",
+            "shell": "/bin/fish",
+            "format": "SSD Corsair MP600 PRO - 1 TB ({1}%)",
             "key": " ├ 󰋊 {#white}DISK",
             "keyColor": "yellow",
         },

@@ -5,7 +5,6 @@ eza
 fasm
 fastfetch
 fd
-felix-rs
 fish
 gimp
 git

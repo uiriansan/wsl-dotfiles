@@ -111,7 +111,7 @@
         },
         {
             "type": "custom", 
-            "format": "felix-rs",
+            "format": "Yazi",
             "key": " ├  {#white}FILE",
             "keyColor": "green",
         },

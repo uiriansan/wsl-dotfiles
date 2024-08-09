@@ -11,13 +11,14 @@ git
 helix
 kitty
 libsixel
+lua
 man-db
 nano
 nasm
 openssh
 qemu-base
 ripgrep
-rust
+rustup
 starship
 sudo
 vim

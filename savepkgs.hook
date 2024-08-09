@@ -6,4 +6,4 @@ Target = *
 
 [Action]
 When = PostTransaction
-Exec = /bin/fish -C '/usr/bin/pacman -Qqe > ~/.config/pkglist.txt'
+Exec = /bin/fish -c '/usr/bin/pacman -Qqe > ~/.config/pkglist.txt'

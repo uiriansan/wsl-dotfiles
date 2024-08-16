@@ -1,3 +1,5 @@
+# https://github.com/helix-editor/helix/wiki/Language-Server-Configurations
+
 # LANG -> RUST 
 [[language]]
 name = "rust"
@@ -151,3 +153,31 @@ args = { console = "internalConsole", attachCommands = [ "platform select remote
 
 [language-server.cc-ls]
 command = "ccls"
+
+# LANG -> Typescript
+# $ bun i -g typescript typescript-language-server
+# To configure type language server, add a tsconfig.json or jsconfig.json to the root of your project.
+# Here's an example that disables type checking in JavaScript files. 
+# {
+#  "compilerOptions": {
+#    "module": "commonjs",
+#    "target": "es6",
+#    "checkJs": false
+#  },
+#  "exclude": ["node_modules"]
+# }
+
+
+# LANG -> Svelte
+# $ bun i -g svelte-language-server
+# $ bun i -g typescript-svelte-plugin
+
+# Add the following to tsconfig.json/jsconfig.json:
+# {
+#    "compilerOptions": {
+#        ...
+#        "plugins": [{
+#            "name": "typescript-svelte-plugin"
+#        }]
+#    }
+# }

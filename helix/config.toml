@@ -29,8 +29,10 @@ auto-signature-help = false
 display-messages = true
 
 [editor.statusline]
-left = ["mode", "spinner", "version-control", "file-name"]
+left = ["mode", "spinner", "separator", "version-control", "separator", "file-name", "file-modification-indicator"]
+center = ["read-only-indicator"]
 right = ["primary-selection-length", "total-line-numbers"]
+separator = " | "
 
 [keys.normal]
 "A-," = "goto_previous_buffer"

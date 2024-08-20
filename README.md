@@ -3,7 +3,7 @@
 **Terminal:**        [Windows Terminal](https://github.com/microsoft/terminal)\
 **Shell:**           [Fish](https://github.com/fish-shell/fish-shell) + [Starship](https://github.com/starship/starship)\
 **Fetch:**           [Fastfetch](https://github.com/fastfetch-cli/fastfetch)\
-**Editor:**          [Helix](https://github.com/helix-editor/helix)\
+**Editor:**          [Neovim](https://neovim.io/) and [Helix](https://github.com/helix-editor/helix)\
 **File manager:**    [Felix](https://github.com/kyoheiu/felix) and [Yazi](https://github.com/sxyazi/yazi)\
 **Browser:**         [w3m](https://wiki.archlinux.org/title/W3m)\
 **Windows taskbar:** [StartAllBack](https://www.startallback.com/)\

@@ -12,7 +12,8 @@ alias neofetch="fastfetch"
 alias ls="ls -lh"
 alias hx="helix"
 
-set -U EDITOR helix
+# set -U EDITOR helix
+set -U EDITOR nvim
 
 function fish_title
     echo Arch » $USER

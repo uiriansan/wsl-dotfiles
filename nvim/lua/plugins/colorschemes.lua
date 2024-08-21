@@ -2,10 +2,10 @@ return {
 	{
 		"catppuccin/nvim",
 		priority = 1000,
-		config = function()
-			vim.cmd([[ colorscheme catppuccin-mocha ]])
-			require("catppuccin.palettes").get_palette("mocha")
-		end,
+		-- config = function()
+		-- 	vim.cmd([[ colorscheme catppuccin-mocha ]])
+		-- 	require("catppuccin.palettes").get_palette("mocha")
+		-- end,
 	},
 	{
 		"folke/tokyonight.nvim",
@@ -20,7 +20,7 @@ return {
 		priority = 1000,
 	},
 	{
-		"olimorris/onedarkpro.nvim",
+		"navarasu/onedark.nvim",
 		priority = 1000,
 	},
 	{
@@ -29,6 +29,33 @@ return {
 	},
 	{
 		"rose-pine/neovim",
+		priority = 1000,
+	},
+	{
+		"rebelot/kanagawa.nvim",
+		priority = 1000,
+	},
+	{
+		"EdenEast/nightfox.nvim",
+		priority = 1000,
+	},
+	{
+		"marko-cerovac/material.nvim",
+		priority = 1000,
+	},
+	{
+		"embark-theme/vim",
+		priority = 1000,
+		config = function()
+			vim.cmd([[ colorscheme embark ]])
+		end,
+	},
+	{
+		"sainnhe/sonokai",
+		priority = 1000,
+	},
+	{
+		"yazeed1s/minimal.nvim",
 		priority = 1000,
 	},
 }

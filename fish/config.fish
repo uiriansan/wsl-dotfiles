@@ -11,6 +11,10 @@ alias ff="fastfetch"
 alias neofetch="fastfetch"
 alias ls="ls -lh"
 alias hx="helix"
+alias vim="nvim"
+alias v="nvim"
+alias vi="nvim"
+alias neovim="nvim"
 
 # set -U EDITOR helix
 set -U EDITOR nvim

@@ -17,10 +17,10 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagn
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
 -- Disable arrow keys in normal mode
-vim.keymap.set("n", "<left>", '<cmd>echo "Use h to move!!"<CR>')
-vim.keymap.set("n", "<right>", '<cmd>echo "Use l to move!!"<CR>')
-vim.keymap.set("n", "<up>", '<cmd>echo "Use k to move!!"<CR>')
-vim.keymap.set("n", "<down>", '<cmd>echo "Use j to move!!"<CR>')
+-- vim.keymap.set("n", "<left>", '<cmd>echo "Use h to move!!"<CR>')
+-- vim.keymap.set("n", "<right>", '<cmd>echo "Use l to move!!"<CR>')
+-- vim.keymap.set("n", "<up>", '<cmd>echo "Use k to move!!"<CR>')
+-- vim.keymap.set("n", "<down>", '<cmd>echo "Use j to move!!"<CR>')
 
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
@@ -32,6 +32,13 @@ vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower win
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
 -- cokeline.nvim
-vim.keymap.set("n", "<C-left>", "<Plug>(cokeline-focus-prev)", { desc = "Previous buffer" })
-vim.keymap.set("n", "<C-right>", "<Plug>(cokeline-focus-next)", { desc = "Next buffer" })
-vim.keymap.set("n", "<C-w>", "<Plug>(cokeline-pick-close)", { desc = "Close buffer" })
+vim.keymap.set("n", "<C-q>", "<Plug>(cokeline-focus-prev)", { desc = "Previous buffer" })
+vim.keymap.set("n", "<C-e>", "<Plug>(cokeline-focus-next)", { desc = "Next buffer" })
+-- vim.keymap.set("n", "<C-w>", "<Plug>(cokeline-pick-close)", { desc = "Close buffer" })
+vim.keymap.set("n", "<C-w>", "<cmd>bn<bar>sp<bar>bp<bar>bd<CR>", { desc = "Close buffer" })
+
+-- floaterm.nvim
+vim.keymap.set("n", "<C-x>", "<cmd>FloatermNew<CR>", { desc = "Toggle Terminal" })
+
+-- nvim-tree
+vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle Nvim File Tree" })

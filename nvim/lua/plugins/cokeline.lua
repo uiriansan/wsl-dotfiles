@@ -193,7 +193,16 @@ return {
 					---@type string | string[]
 					filetype = { "NvimTree", "neo-tree", "SidebarNvim" },
 					---@type Component[]
-					components = {},
+					components = {
+						{
+							text = "       uirian-san.dev",
+							fg = "gray",
+							bg = function()
+								return require("cokeline.hlgroups").get_hl_attr("NvimTreeNormal", "bg")
+							end,
+							bold = true,
+						},
+					},
 				},
 			})
 		end,

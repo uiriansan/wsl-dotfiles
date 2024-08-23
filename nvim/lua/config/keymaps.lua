@@ -36,9 +36,3 @@ vim.keymap.set("n", "<C-q>", "<Plug>(cokeline-focus-prev)", { desc = "Previous b
 vim.keymap.set("n", "<C-e>", "<Plug>(cokeline-focus-next)", { desc = "Next buffer" })
 -- vim.keymap.set("n", "<C-w>", "<Plug>(cokeline-pick-close)", { desc = "Close buffer" })
 vim.keymap.set("n", "<C-w>", "<cmd>bn<bar>sp<bar>bp<bar>bd<CR>", { desc = "Close buffer" })
-
--- floaterm.nvim
-vim.keymap.set("n", "<C-x>", "<cmd>FloatermNew<CR>", { desc = "Toggle Terminal" })
-
--- nvim-tree
-vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle Nvim File Tree" })

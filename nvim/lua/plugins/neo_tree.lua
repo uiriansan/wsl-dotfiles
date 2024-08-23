@@ -9,6 +9,7 @@ return {
 			"nvim-lua/plenary.nvim",
 			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
 			"MunifTanjim/nui.nvim",
+			"mrbjarksen/neo-tree-diagnostics.nvim",
 		},
 		cmd = "Neotree",
 		keys = {
@@ -24,7 +25,7 @@ return {
 				open_files_do_not_replace_types = { "terminal", "trouble", "qf" }, -- when opening files, do not use windows containing these filetypes or buftypes
 				sources = {
 					"filesystem",
-					"buffers",
+					"diagnostics",
 					"git_status",
 				},
 				source_selector = {
@@ -34,8 +35,8 @@ return {
 					tabs_layout = "equal",
 					sources = {
 						{ source = "filesystem", display_name = "" .. " Files" },
-						{ source = "buffers", display_name = "" .. " Bufs" },
-						{ source = "git_status", display_name = "" .. " Git" },
+						{ source = "diagnostics", display_name = "" .. " LSP" },
+						{ source = "git_status", display_name = "" .. " Git" },
 					},
 				},
 				default_component_configs = {
@@ -71,6 +72,20 @@ return {
 						trailing_slash = false,
 						use_git_status_colors = true,
 						highlight = "NeoTreeFileName",
+					},
+					git_status = {
+						symbols = {
+							added = "", -- or "✚", but this is redundant info if you use git_status_colors on the name
+							modified = "", -- or "", but this is redundant info if you use git_status_colors on the name
+							deleted = "", -- this can only be used in the git_status source
+							renamed = "", -- this can only be used in the git_status source
+							-- Status type
+							untracked = "",
+							ignored = "",
+							unstaged = "",
+							staged = "",
+							conflict = "",
+						},
 					},
 				},
 				window = {
@@ -125,6 +140,34 @@ return {
 						},
 					},
 				},
+				diagnostics = {
+					auto_preview = { -- May also be set to `true` or `false`
+						enabled = false, -- Whether to automatically enable preview mode
+						preview_config = {}, -- Config table to pass to auto preview (for example `{ use_float = true }`)
+						event = "neo_tree_buffer_enter", -- The event to enable auto preview upon (for example `"neo_tree_window_after_open"`)
+					},
+					bind_to_cwd = true,
+					diag_sort_function = "severity", -- "severity" means diagnostic items are sorted by severity in addition to their positions.
+					-- "position" means diagnostic items are sorted strictly by their positions.
+					-- May also be a function.
+					follow_current_file = { -- May also be set to `true` or `false`
+						enabled = true, -- This will find and focus the file in the active buffer every time
+						always_focus_file = false, -- Focus the followed file, even when focus is currently on a diagnostic item belonging to that file
+						expand_followed = true, -- Ensure the node of the followed file is expanded
+						leave_dirs_open = false, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
+						leave_files_open = false, -- `false` closes auto expanded files, such as with `:Neotree reveal`
+					},
+					group_dirs_and_files = true, -- when true, empty folders and files will be grouped together
+					group_empty_dirs = true, -- when true, empty directories will be grouped together
+					show_unloaded = true, -- show diagnostics from unloaded buffers
+					refresh = {
+						delay = 100, -- Time (in ms) to wait before updating diagnostics. Might resolve some issues with Neovim hanging.
+						event = "vim_diagnostic_changed", -- Event to use for updating diagnostics (for example `"neo_tree_buffer_enter"`)
+						-- Set to `false` or `"none"` to disable automatic refreshing
+						max_items = 10000, -- The maximum number of diagnostic items to attempt processing
+						-- Set to `false` for no maximum
+					},
+				},
 				git_status = {
 					window = {
 						position = "float",
@@ -132,9 +175,16 @@ return {
 					},
 				},
 				event_handlers = {
+					-- {
+					-- 	event = "file_open_requested",
+					-- 	handler = function()
+					-- 		require("neo-tree.command").execute({ action = "close" })
+					-- 	end,
+					-- },
 					{
 						event = "neo_tree_buffer_enter",
 						handler = function()
+							vim.g["neo_tree_opened"] = true
 							local hl = vim.api.nvim_get_hl_by_name("Cursor", true)
 							hl.blend = 100
 							vim.api.nvim_set_hl(0, "Cursor", hl)
@@ -144,6 +194,7 @@ return {
 					{
 						event = "neo_tree_buffer_leave",
 						handler = function()
+							vim.g["neo_tree_opened"] = false
 							local hl = vim.api.nvim_get_hl_by_name("Cursor", true)
 							hl.blend = 0
 							vim.api.nvim_set_hl(0, "Cursor", hl)

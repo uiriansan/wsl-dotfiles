@@ -195,8 +195,7 @@ return {
 					---@type Component[]
 					components = {
 						{
-							text = "       uirian-san.dev",
-							fg = "gray",
+							text = "",
 							bg = function()
 								return require("cokeline.hlgroups").get_hl_attr("NvimTreeNormal", "bg")
 							end,

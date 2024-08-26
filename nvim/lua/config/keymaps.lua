@@ -6,7 +6,7 @@
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Diagnostic keymaps
-vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
+-- vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -15,12 +15,6 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagn
 -- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
 -- or just use <C-\><C-n> to exit terminal mode
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
-
--- Disable arrow keys in normal mode
--- vim.keymap.set("n", "<left>", '<cmd>echo "Use h to move!!"<CR>')
--- vim.keymap.set("n", "<right>", '<cmd>echo "Use l to move!!"<CR>')
--- vim.keymap.set("n", "<up>", '<cmd>echo "Use k to move!!"<CR>')
--- vim.keymap.set("n", "<down>", '<cmd>echo "Use j to move!!"<CR>')
 
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
@@ -36,3 +30,7 @@ vim.keymap.set("n", "<C-q>", "<Plug>(cokeline-focus-prev)", { desc = "Previous b
 vim.keymap.set("n", "<C-e>", "<Plug>(cokeline-focus-next)", { desc = "Next buffer" })
 -- vim.keymap.set("n", "<C-w>", "<Plug>(cokeline-pick-close)", { desc = "Close buffer" })
 vim.keymap.set("n", "<C-w>", "<cmd>bn<bar>sp<bar>bp<bar>bd<CR>", { desc = "Close buffer" })
+
+vim.keymap.set("n", "<F1>", "<cmd>Neotree toggle source=filesystem<CR>", { desc = "Toggle NeoTree Files" })
+vim.keymap.set("n", "<F2>", "<cmd>Neotree toggle source=diagnostics<CR>", { desc = "Toggle NeoTree Diagnostics" })
+vim.keymap.set("n", "<F3>", "<cmd>Neotree toggle source=git_status<CR>", { desc = "Toggle NeoTree Git" })

@@ -1,3 +1,3 @@
 ;; Create a Windows shortcut and paste the following command into [Properties -> Target] to run Windows Terminal pre-configured:
 
-%LocalAppData%\Microsoft\WindowsApps\wt.exe --focus -M -p "Arch"; split-pane --vertical --size .65--profile "Arch" wsl.exe fish -C "hx Code/"; move-focus left; split-pane --horizontal --profile "Arch" --size .4 wsl.exe fish -C "yazi Code/"; move-focus up
+%LocalAppData%\Microsoft\WindowsApps\wt.exe --focus -M -p "Arch Linux"; split-pane --vertical --size .70 --profile "Arch" wsl.exe fish -C "nvim"; move-focus left; split-pane --horizontal --profile "Arch Linux" --size .4 wsl.exe fish -C "yazi"; move-focus up

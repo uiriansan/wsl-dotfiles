@@ -15,14 +15,6 @@
             "command": 
             {
                 "action": "moveFocus",
-                "direction": "left"
-            },
-            "keys": "ctrl+left"
-        },
-        {
-            "command": 
-            {
-                "action": "moveFocus",
                 "direction": "right"
             },
             "keys": "ctrl+right"
@@ -31,12 +23,20 @@
             "command": 
             {
                 "action": "moveFocus",
-                "direction": "up"
+                "direction": "left"
             },
-            "keys": "ctrl+up"
+            "keys": "ctrl+left"
         },
         {
             "command": "paste"
+        },
+        {
+            "command": 
+            {
+                "action": "moveFocus",
+                "direction": "up"
+            },
+            "keys": "ctrl+up"
         },
         {
             "command": 
@@ -119,18 +119,19 @@
                 "useAcrylic": true
             },
             {
-                "colorScheme": "Embark",
+                "colorScheme": "Catppuccin Mocha",
                 "cursorShape": "bar",
                 "font": 
                 {
+                    "cellHeight": "1.8",
                     "face": "JetBrainsMono Nerd Font Mono",
                     "size": 9.0
                 },
                 "guid": "{a5a97cb8-8961-5535-816d-772efe0c6a3f}",
                 "hidden": false,
-                "icon": "C:\\Users\\uiria\\OneDrive\\Imagens\\icons\\nyarch.ico",
+                "icon": "C:\\Users\\uiria\\OneDrive\\Imagens\\icons\\arch.ico",
                 "name": "Arch",
-                "padding": "10",
+                "padding": "0",
                 "scrollbarState": "hidden",
                 "source": "Windows.Terminal.Wsl",
                 "tabTitle": "Arch Linux"
@@ -168,6 +169,25 @@
                 "hidden": false,
                 "name": "Developer PowerShell for VS 2022",
                 "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "colorScheme": "Catppuccin Mocha",
+                "commandline": "C:\\Windows\\system32\\wsl.exe -d Arch",
+                "cursorShape": "bar",
+                "font": 
+                {
+                    "cellHeight": "1.2",
+                    "face": "JetBrainsMono Nerd Font Mono",
+                    "size": 9.0
+                },
+                "guid": "{c548e66d-6c1f-4bd8-8981-bd47c54e99a0}",
+                "hidden": false,
+                "icon": "C:\\Users\\uiria\\OneDrive\\Imagens\\icons\\arch.ico",
+                "name": "Arch Linux",
+                "padding": "0",
+                "scrollbarState": "hidden",
+                "startingDirectory": "~",
+                "tabTitle": "Arch Linux"
             }
         ]
     },

@@ -7,8 +7,17 @@ return {
 			"SmiteshP/nvim-navic",
 			"nvim-tree/nvim-web-devicons", -- optional dependency
 		},
-		opts = {
-			-- configurations go here
-		},
+		config = function()
+			local colors = require("catppuccin.palettes").get_palette("mocha")
+			require("barbecue").setup({
+				theme = {
+					context = {
+						fg = "gray",
+					},
+					dirname = { fg = "gray" },
+					basename = { fg = "gray" },
+				},
+			})
+		end,
 	},
 }

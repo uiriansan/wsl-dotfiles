@@ -95,7 +95,11 @@ return {
 						noremap = true,
 						nowait = true,
 					},
-					mappings = {},
+					mappings = {
+						["/"] = "fuzzy_sorter",
+						["<space>"] = { "toggle_node", nowait = false },
+						["<space>"] = { "open", nowait = false },
+					},
 				},
 				filesystem = {
 					bind_to_cwd = true,
@@ -167,11 +171,23 @@ return {
 						max_items = 10000, -- The maximum number of diagnostic items to attempt processing
 						-- Set to `false` for no maximum
 					},
+					window = {
+						position = "left",
+						width = 40,
+						mapping_options = {
+							noremap = true,
+							nowait = true,
+						},
+					},
 				},
 				git_status = {
 					window = {
-						position = "float",
-						mappings = {},
+						position = "left",
+						width = 40,
+						mapping_options = {
+							noremap = true,
+							nowait = true,
+						},
 					},
 				},
 				event_handlers = {

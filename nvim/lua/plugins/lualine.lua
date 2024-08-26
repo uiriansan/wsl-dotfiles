@@ -113,6 +113,9 @@ insert_left({
 		color_info = { fg = colors.cyan },
 	},
 	always_visible = false,
+	on_click = function()
+		vim.cmd([[ Trouble diagnostics toggle ]])
+	end,
 })
 
 insert_left({
@@ -136,8 +139,14 @@ insert_left({
 
 insert_right({
 	function()
+		local color = colors.text
 		local msg = ""
 		local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
+		local buf_fn = vim.api.nvim_buf_get_name(0)
+		local _, c = require("nvim-web-devicons").get_icon_color(buf_fn, buf_ft)
+		color = c
+		vim.cmd("hi! lualine_lsp_name guifg=" .. color .. " guibg=" .. colors.mantle)
+
 		local clients = vim.lsp.get_active_clients()
 		if next(clients) == nil then
 			return msg
@@ -150,6 +159,7 @@ insert_right({
 		end
 		return msg
 	end,
+	color = "lualine_lsp_name",
 })
 
 insert_right({

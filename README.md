@@ -11,7 +11,11 @@
 **Font:**            [JetBrainsMono Nerd Font Mono](https://www.nerdfonts.com/font-downloads)
 
 -----
+<h5>Neovim and Yazi</h5>
+<img src="./preview_nvim.png" width="100%" />
 
+-----
+<h5>Helix and Felix</h5>
 <img src="./preview.png" width="100%" />
 
 
